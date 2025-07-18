@@ -71,3 +71,10 @@ func board() htma.Element {
 	}
 	return board
 }
+
+func button(signals Signals) htma.Element {
+	return htma.Button().
+		IDAttr(signals.Cell).
+		ClassAttr("cell").
+		Text(signals.Shape)
+}
