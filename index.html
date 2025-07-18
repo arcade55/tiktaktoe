@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="/style.css">
+    <script type="module"
+        src="https://cdn.jsdelivr.net/gh/starfederation/datastar@v1.0.0-RC.1/bundles/datastar.js"></script>
+</head>
+
+<body data-on-load="@get('/sse')">
+    <main>
+        <h1>Real-Time Tic-Tac-Toe</h1>
+        <h2 data-text="'You are player ' + $shape"></h2>
+        <pre data-json-signals></pre>
+
+        <!-- The game board is now static HTML -->
+        <div data-ref-foo id="game-board" class="tic-tac-toe-board">
+            <button id="cell-0" class="cell" data-on-click="$cell=el.id;@post('/cell')"></button>
+            <button id="cell-1" class="cell" data-on-click="$cell=el.id;@post('/cell')"></button>
+            <button id="cell-2" class="cell" data-on-click="$cell=el.id;@post('/cell')"></button>
+            <button id="cell-3" class="cell" data-on-click="$cell=el.id;@post('/cell')"></button>
+            <button id="cell-4" class="cell" data-on-click="$cell=el.id;@post('/cell')"></button>
+            <button id="cell-5" class="cell" data-on-click="$cell=el.id;@post('/cell')"></button>
+            <button id="cell-6" class="cell" data-on-click="$cell=el.id;@post('/cell')"></button>
+            <button id="cell-7" class="cell" data-on-click="$cell=el.id;@post('/cell')"></button>
+            <button id="cell-8" class="cell" data-on-click="$cell=el.id;@post('/cell')"></button>
+        </div>
+
+        <button id="reset-button" data-on-click="@post('/reset')">Reset Game</button>
+    </main>
+</body>
+
+</html>

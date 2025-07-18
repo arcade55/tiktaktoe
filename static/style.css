@@ -1,0 +1,98 @@
+:root {
+    --board-bg: #f0f0f0;
+    --line-color: #999;
+    --text-color: #333;
+    --button-bg: #ccc;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--board-bg);
+    color: var(--text-color);
+    margin: 0;
+    padding: 1rem;
+}
+
+main {
+    max-width: 320px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1 {
+    font-size: 1.5rem;
+}
+
+h2 {
+    font-size: 1.2rem;
+    min-height: 1.5em; /* Prevent layout shift when text changes */
+    
+}
+
+.tic-tac-toe-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Make it a perfect square */
+    margin-top: 1rem;
+}
+
+.cell {
+    background-color: transparent;
+    border: none; /* Remove all borders by default */
+    cursor: pointer;
+    font-size: 2rem;
+    font-weight: bold;
+    display: grid;
+    place-items: center;
+    color: var(--text-color); /* X and O are the same color */
+    aspect-ratio: 1 / 1; /* Make each cell square */
+}
+
+.cell:hover:not(:disabled) {
+    background-color: #e9e9e9;
+}
+
+.cell:disabled {
+    cursor: not-allowed;
+}
+
+/* Add borders to create the grid lines */
+.cell:nth-child(1),
+.cell:nth-child(2),
+.cell:nth-child(4),
+.cell:nth-child(5) {
+    border-right: 4px solid var(--line-color);
+    border-bottom: 4px solid var(--line-color);
+}
+
+.cell:nth-child(3),
+.cell:nth-child(6) {
+    border-bottom: 4px solid var(--line-color);
+}
+
+.cell:nth-child(7),
+.cell:nth-child(8) {
+    border-right: 4px solid var(--line-color);
+}
+
+button, input, select, textarea {
+    font-size: 16px; /* Prevents iOS zoom on focus */
+}
+
+#reset-button {
+    margin-top: 1.5rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--text-color);
+    background-color: var(--button-bg);
+    border: 1px solid var(--line-color);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#reset-button:hover {
+    background-color: #bbb;
+}
+
